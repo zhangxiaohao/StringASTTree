@@ -1,0 +1,27 @@
+||||||||||||||||||||||||||
+timestamp: 0 [ 8 8 ]
+type: Insert pos: 6 str: m
+||||||||||||||||||||||||||
+			z | true | 1
+		j | true | 2
+	t | true | 7
+			l | true | 1
+		s | true | 4
+			r | true | 2
+				m | true | 1
+z | true | 16
+		b | true | 2
+			u | true | 1
+	g | true | 8
+				l | true | 1
+			g | true | 3
+				t | true | 1
+		m | true | 5
+			u | true | 1
+
+depth: 5
+||||||||||||||||||||||||||
+
+
+zjtlsrmzbuglgtmu
+zjtlsrmzbuglgtmu
