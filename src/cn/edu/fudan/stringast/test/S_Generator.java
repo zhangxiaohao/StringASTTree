@@ -36,19 +36,20 @@ public class S_Generator extends Thread{
     public void generateOperation() {
         int type = S_Operation.INSERT;
         if(this.s_algorithm.document.head.effectiveNode > 0) {
-            type = Math.random() > 0.5 ? S_Operation.INSERT : S_Operation.DELETE;
+            type = Math.random() > 0.1 ? S_Operation.INSERT : S_Operation.DELETE;
         }
         int position = 0, length = 1;
         if(type == S_Operation.INSERT) {
             position = new Random().nextInt(this.s_algorithm.document.head.effectiveNode + 1);
-            length = new Random().nextInt(5) + 1;
+            length = new Random().nextInt(1) + 1;
         }else if (type == S_Operation.DELETE) {
             position = 1;//new Random().nextInt(this.s_algorithm.document.head.effectiveNode) + 1;
             position = Math.max(position, 1);
             int t = new Random().nextInt(this.s_algorithm.document.head.effectiveNode - position + 1) + 1;
-            length = Math.min(5, t);
+            length = Math.min(1, t);
             //new Random().nextInt(this.s_algorithm.document.head.effectiveNode - position + 1) + 1;
         }
+        number -= length;
         int siteNum = s_algorithm.s_timeStamp.getSiteNumber();
         s_algorithm.s_timeStamp.timeStamp.set(siteNum, s_algorithm.s_timeStamp.timeStamp.get(siteNum) + 1);
         S_Operation s_operation = new S_Operation(s_algorithm.s_timeStamp, getStr(length), type, position, length);
@@ -66,7 +67,7 @@ public class S_Generator extends Thread{
     }
 
     public void run() {
-        for(int i=0; i<number; i++) {
+        while(number > 0) {
             generateOperation();
             try {
                 Thread.sleep(new Random().nextInt(1) + 1);

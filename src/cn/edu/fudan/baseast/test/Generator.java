@@ -29,7 +29,7 @@ public class Generator extends Thread{
         //System.out.println("Operation has been execute!");
         int type = Operation.INSERT;
         if(this.algorithm.document.head.effectiveNode > 0) {
-            type = Math.random() > 0.5 ? Operation.INSERT : Operation.DELETE;
+            type = Math.random() > 0.1 ? Operation.INSERT : Operation.DELETE;
         }
         int position = 0;
         if(type == Operation.INSERT) {

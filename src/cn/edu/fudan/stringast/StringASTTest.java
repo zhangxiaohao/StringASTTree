@@ -14,8 +14,8 @@ public class StringASTTest {
     public static ArrayList<S_Algorithm> s_algorithms = new ArrayList<S_Algorithm>();
     public static ArrayList<S_Executor> s_executors = new ArrayList<S_Executor>();
     public static ArrayList<S_Generator> s_generators = new ArrayList<S_Generator>();
-    public static final int SITE = 3;
-    public static final int OPNUM = 20000;
+    public static final int SITE = 2;
+    public static final int OPNUM = 4500;
 
     public static void run() throws InterruptedException {
         for(int i=0; i<SITE; i++) s_algorithms.add(new S_Algorithm(i, SITE));
